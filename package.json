@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "next": "12.2.4",
