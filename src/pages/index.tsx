@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { ThemePickerDropDown } from '../organisms/ThemePickerDropDown'
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +16,11 @@ const Home: NextPage = () => {
         <h1 className='m-0 text-6xl text-center font-bold leading-tight'>
           Welcome to{' '}
           <a
-            className='text-blue-600 no-underline active:underilne focus:underline hover:underline'
+            className={`
+              text-primary no-underline
+              active:underilne focus:underline hover:underline
+              active:text-primary-focus focus:text-primary-focus hover:text-primary-focus
+            `}
             href='https://nextjs.org'
           >
             Next.js!
@@ -24,20 +29,24 @@ const Home: NextPage = () => {
 
         <p className='text-center leading-normal text-2xl my-[4rem]'>
           Get started by editing{' '}
-          <code className='bg-[#fafafa] rounded p-3 text-lg font-[monospace] text-[1.1rem] p-[0.75rem] rounded-[5px]'>
+          <code className='bg-base-300 rounded p-3 text-lg font-[monospace] text-[1.1rem] p-[0.75rem] rounded-[5px]'>
             pages/index.tsx
           </code>
         </p>
+
+        <div className='mb-4'>
+          <ThemePickerDropDown />
+        </div>
 
         <div className='flex items-center justify-center flex-wrap max-w-[800px]'>
           <a
             href='https://nextjs.org/docs'
             className={`
               sm:max-w-[300px] sm:min-h-none w-[100%] min-h-[188px]
-              m-4 p-6 text-left no-underline border-[1px] border-[#eaeaea] rounded-[10px]
-              hover:text-blue-600 hover:border-blue-600
-              focus:text-blue-600 focus:border-blue-600
-              active:text-blue-600 active:border-blue-600
+              m-4 p-6 text-left no-underline border-[1px] rounded-[10px]
+              hover:text-primary-focus hover:border-primary-focus
+              focus:text-primary-focus focus:border-primary-focus
+              active:text-primary-focus active:border-primary-focus
               duration-150 erase-in-out
             `}
           >
@@ -53,10 +62,10 @@ const Home: NextPage = () => {
             href='https://nextjs.org/learn'
             className={`
               sm:max-w-[300px] sm:min-h-none w-[100%] min-h-[188px]
-              m-4 p-6 text-left no-underline border-[1px] border-[#eaeaea] rounded-[10px]
-              hover:text-blue-600 hover:border-blue-600
-              focus:text-blue-600 focus:border-blue-600
-              active:text-blue-600 active:border-blue-600
+              m-4 p-6 text-left no-underline border-[1px] rounded-[10px]
+              hover:text-primary-focus hover:border-primary-focus
+              focus:text-primary-focus focus:border-primary-focus
+              active:text-primary-focus active:border-primary-focus
               duration-150 erase-in-out
             `}
           >
@@ -70,10 +79,10 @@ const Home: NextPage = () => {
             href='https://github.com/vercel/next.js/tree/canary/examples'
             className={`
               sm:max-w-[300px] sm:min-h-none w-[100%] min-h-[188px]
-              m-4 p-6 text-left no-underline border-[1px] border-[#eaeaea] rounded-[10px]
-              hover:text-blue-600 hover:border-blue-600
-              focus:text-blue-600 focus:border-blue-600
-              active:text-blue-600 active:border-blue-600
+              m-4 p-6 text-left no-underline border-[1px] rounded-[10px]
+              hover:text-primary-focus hover:border-primary-focus
+              focus:text-primary-focus focus:border-primary-focus
+              active:text-primary-focus active:border-primary-focus
               duration-150 erase-in-out
             `}
           >
@@ -87,10 +96,10 @@ const Home: NextPage = () => {
             href='https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
             className={`
               sm:max-w-[300px] sm:min-h-none w-[100%] min-h-[188px]
-              m-4 p-6 text-left no-underline border-[1px] border-[#eaeaea] rounded-[10px]
-              hover:text-blue-600 hover:border-blue-600
-              focus:text-blue-600 focus:border-blue-600
-              active:text-blue-600 active:border-blue-600
+              m-4 p-6 text-left no-underline border-[1px] rounded-[10px]
+              hover:text-primary-focus hover:border-primary-focus
+              focus:text-primary-focus focus:border-primary-focus
+              active:text-primary-focus active:border-primary-focus
               duration-150 erase-in-out
             `}
           >
@@ -102,7 +111,7 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-      <footer className='flex justify-center items-center flex-1 py-[2rem] border-t-1 border-t-[#eaeaea]'>
+      <footer className='flex justify-center items-center flex-1 py-[2rem] border-t-1 border-t-base-300'>
         <a
           className='flex justify-center items-center flex-grow'
           href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'

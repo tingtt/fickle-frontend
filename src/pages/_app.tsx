@@ -1,12 +1,19 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { RecoilRoot } from 'recoil'
+import { useTheme } from '../../domain/model/theme'
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className='font-sans'>
-      <Component {...pageProps} />
-    </div>
+    <RecoilRoot>
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </RecoilRoot>
   )
 }
 
-export default MyApp
+const ThemeProvider = (props: React.PropsWithChildren) => {
+  const [theme] = useTheme()
+  return <div data-theme={theme}>{props.children}</div>
+}
